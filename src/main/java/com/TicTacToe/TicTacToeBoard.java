@@ -76,7 +76,7 @@ public static void main(String args[] ){
 Scanner sc = new Scanner(System.in);
 String input = sc.nextLine();
 TicTacToeBoard T = new TicTacToeBoard(input);
-logger.log(T.evaluate());
+System.out.println(T.evaluate());
 
 
 }
