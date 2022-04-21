@@ -28,7 +28,7 @@ public class TicTacToeBoard {
    */
   public Evaluation evaluate() {
 	  if(input.length()!=9)
-		  return Evaluation.UnreachableState;
+		  return Evaluation.UNREACHABLESTATE;
 	  for(int i=0;i<input.length();i++)
 	  {
 		  if(input.charAt(i) == 'x')
@@ -37,7 +37,7 @@ public class TicTacToeBoard {
 			  countO++;
 	  }
 	  if(Math.abs(countX-countO) > 1)
-		  return Evaluation.UnreachableState;
+		  return Evaluation.UNREACHABLESTATE;
 	  
       if(check(input,'x'))
     	 xwins=1;
@@ -47,11 +47,11 @@ public class TicTacToeBoard {
       if(xwins==1 && owins==1)
     	  return Evaluation.UnreachableState;
       if(xwins==1)
-    	  return Evaluation.Xwins;
+    	  return Evaluation.XWINS;
       if(owins==1)
-    	  return Evaluation.Owins;
+    	  return Evaluation.OWINS;
       
-      return Evaluation.NoWinner;
+      return Evaluation.NOWINER;
   }
   public static boolean check(String input,char a) {
 	  int j=-1;
